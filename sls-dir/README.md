@@ -1,2 +1,2 @@
-# How to this directory used Serverless  
+# Serverless Section
 ## Overview
