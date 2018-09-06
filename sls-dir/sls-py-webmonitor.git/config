@@ -1,8 +1,0 @@
-[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = true
-[remote "origin"]
-	url = git@github.com:ma-nakano/sls-py-webmonitor.git
-	fetch = +refs/*:refs/*
-	mirror = true
