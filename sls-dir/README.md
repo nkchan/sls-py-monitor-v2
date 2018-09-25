@@ -43,5 +43,19 @@ functions:
   get_site: sls-py-webmonitor-dev-get_site
 ```
 
+## Required Notes
+this item is used [here](../react-dir/src/config.js.default)
+
+- bucket name(react)
+	- project name-bucket-stage
+
+- api gateway
+	- "https://xxxxxx.execute-api.ap-northeast-1.amazonaws.com/prod"	
+
+- Cognito 
+	- USER_Pool_ID
+	- APP_CLIENT_ID
+	- IDENTITY_POOL_ID
+
 ### Regist Subscriber
 To receive alert, create subscription to SNS topic. This app will create SNS topic named serverless-web-monitor.
