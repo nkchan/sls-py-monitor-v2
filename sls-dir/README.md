@@ -43,6 +43,12 @@ functions:
   get_site: sls-py-webmonitor-dev-get_site
 ```
 
+
+## Make Identity Pools (Federated Identities) 
+web page is [here](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html).
+
+
+
 ## Required Notes
 this item is used [here](../react-dir/src/config.js.default)
 
