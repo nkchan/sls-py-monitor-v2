@@ -14,6 +14,6 @@ Back-end part is `sls-dir`. Front-end part is 'react-dir'. Please setup Back-end
 ![構成図](https://github.com/nkchan/sls-py-monitor-v2/blob/master/image/structure-chart.jpg)
 
 ## Back-end part
-This part is used [Severless Framework](https://serverless.com/) to realize Back-end.
+This part is used [Severless Framework](https://serverless.com/) to realize Back-end. For details, click [here](/sls-dir/README.md).
 ## Front-end part
 
