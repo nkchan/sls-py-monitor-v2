@@ -7,7 +7,7 @@ Management screen used authentication by Cognito.
 
 It is tow part composition. First, Back-end part that is used API Gateway,Lambda and DynamoDB. Second, Front-end part that is used React in S3.
 
-Back-end part is `sls-dir`. Front-end part is 'react-dir'. Please setup Back-end part, next Front-end part. 
+Back-end part is `sls-dir`. Front-end part is `react-dir`. Please setup Back-end part, next Front-end part. 
 
 
 ## Structure chart
