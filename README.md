@@ -5,4 +5,15 @@ Lambda function send http request every 5min(default). If the response changed, 
 
 Management screen used authentication by Cognito.
 
-It is tow part composition. First, Front-end is used React in S3.Second,Back-end is used API Gateway,Lambda and DynamoDB. 
+It is tow part composition. First, Back-end part that is used API Gateway,Lambda and DynamoDB. Second, Front-end part that is used React in S3.
+
+Back-end part is `sls-dir`. Front-end part is 'react-dir'. Please setup Back-end part, next Front-end part. 
+
+
+## Structure chart
+
+
+## Back-end part
+This part is used [Severless Framework](https://serverless.com/) to realize Back-end.
+## Front-end part
+
