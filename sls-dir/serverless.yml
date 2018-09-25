@@ -100,6 +100,30 @@ resources:
       Properties:
         TopicName: ${self:service}-${self:custom.stage}
         DisplayName: "Serverless Web Monitor"
+    CognitoUserPool:
+      Type: AWS::Cognito::UserPool
+      Properties:
+        UserPoolName: ${self:service}-user-pool
+        UsernameAttributes:
+          - email
+        AutoVerifiedAttributes:
+          - email
+    CognitoUserPoolClient:
+      Type: AWS::Cognito::UserPoolClient
+      Properties:
+        ClientName: ${self:service}-user-pool-client
+        UserPoolId:
+          Ref: CognitoUserPool
+        ExplicitAuthFlows:
+          - ADMIN_NO_SRP_AUTH
+        GenerateSecret: false
+
+
   Outputs:
     SitesSNSTopicArn:
       Value: {Ref: SitesSNS}
+    UserPoolId:
+      Value: {Ref: CognitoUserPool}
+    UserPoolClientId:
+      Value: {Ref: CognitoUserPoolClient}
+
