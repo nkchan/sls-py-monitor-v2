@@ -41,6 +41,36 @@ $ npm build
 </CORSConfiguration>
 ```
 
+### writing config.js 
+#### Rename
+
+```
+$ mv config.js.default config.js
+```
+
+#### Rewrite
+```
+export default {
+  s3: {
+    REGION: "ap-northeast-1",
+    BUCKET: "zzzzz"
+  },
+  apiGateway: {
+    REGION: "ap-northeast-1",
+    URL: "https://xxxxxx.execute-api.ap-northeast-1.amazonaws.com/prod"
+  },
+  cognito: {
+    REGION: "ap-northeast-1",
+    USER_POOL_ID: "aaaaaaaaa",
+    APP_CLIENT_ID: "ccccccccccccccccccc",
+    IDENTITY_POOL_ID: "ap-northeast-1:zzzzzzz-zzzzz-zzzz-zzzz-zzzzzz"
+  }
+};
+```
+
+
+
+
 ## Further Improvements
 - Re-rendering if you operate add/delete site
 - Improve speed
