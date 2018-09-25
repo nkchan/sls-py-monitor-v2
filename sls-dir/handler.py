@@ -10,7 +10,7 @@ import json
 import os 
 
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table("sls-py-webmonitor-sites-dev")
+table = dynamodb.Table(os.environ["SITE_TABLE_NAME"])
 
 
 def register(event, context):

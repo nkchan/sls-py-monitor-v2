@@ -14,8 +14,10 @@ Back-end part is `sls-dir`. Front-end part is `react-dir`. Please setup Back-end
 ![構成図](https://github.com/nkchan/sls-py-monitor-v2/blob/master/image/structure-chart.jpg)
 
 ## Preparation
+This repository explain in the state your home directory.
 
 ```
+$ pwd /home/yourname 
 $ git clone https://github.com/nkchan/sls-py-monitor-v2
 $ cd sls-py-monitor-v2
 ```
