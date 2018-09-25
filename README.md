@@ -16,4 +16,4 @@ Back-end part is `sls-dir`. Front-end part is `react-dir`. Please setup Back-end
 ## Back-end part
 This part is used [Severless Framework](https://serverless.com/) to realize Back-end. For details, click [here](/sls-dir/README.md).
 ## Front-end part
-
+This par is used [React](https://reactjs.org/) in front-end. For details, click [here](/react-dir/README.md)
