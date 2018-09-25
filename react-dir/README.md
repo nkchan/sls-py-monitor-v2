@@ -3,6 +3,11 @@
 
 ## setup
 
+```
+$ pwd -> /home/yourname/sls-py-monitor-v2/react-dir
+$ npm install
+$ npm build  
+```
 
 ### S3 Bucket configure
 #### Bucket Policy
@@ -37,6 +42,6 @@
 ```
 
 ## Further Improvements
-- Re-rendering
+- Re-rendering if you operate add/delete site
 - Improve speed
 

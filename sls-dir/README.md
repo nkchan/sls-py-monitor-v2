@@ -4,7 +4,7 @@ Install serverless framework and setup AWS credential. See: [Serverless Framewor
 ## Setup
 
 ```
-$ pwd /home/yourname/sls-py-monitor-v2
+$ pwd -> /home/yourname/sls-py-monitor-v2
 $ cd sls-dir
 $ sh requirements.sh
 $ sls deploy
