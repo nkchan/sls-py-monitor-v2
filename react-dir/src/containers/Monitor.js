@@ -78,7 +78,7 @@ export default class  Monitor extends Component {
         superagent.post(REGISTER_URL).send({name:this.state.site,url:this.state.url}).catch(err=>{console.log(err.message)})
         this.setState({site:'',url:''})
         this.setState({show:false});
-        this.getData();
+        this.props.history.push('/')
     }
     DeleteSiteSet(event) {
         this.setState({remove: true});
@@ -92,7 +92,7 @@ export default class  Monitor extends Component {
         superagent.post(DELETE_URL).send({id:this.state.id}).catch(err => {console.log(err.message)})
         this.setState({id:'',site:'',url:''})
         this.setState({remove: false});
-        this.getData();
+		this.props.history.push('/')
     }
     render(){
         return (

@@ -8,7 +8,7 @@ $ pwd -> /home/yourname/sls-py-monitor-v2
 $ cd sls-dir
 $ sh requirements.sh
 $ sls deploy
-```
+```   
 
 ## Deploy Aplication
 
@@ -45,7 +45,7 @@ functions:
 
 
 ## Make Identity Pools (Federated Identities) 
-web page is [here](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html).
+Cognito User Pool is created when you executed `sls deploy`,but  [Federated Identities](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html) is not created. You need set-up [Identity Pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-integrating-user-pools-with-identity-pools.html) Please Setting "Setting Up an Identity Pool with the AWS Management Console" item. 
 
 
 
@@ -56,12 +56,40 @@ this item is used [here](../react-dir/src/config.js.default)
 	- project name-bucket-stage
 
 - api gateway
-	- "https://xxxxxx.execute-api.ap-northeast-1.amazonaws.com/prod"	
+	- `https://xxxxxx.execute-api.ap-northeast-1.amazonaws.com/prod`	
 
 - Cognito 
 	- USER_Pool_ID
 	- APP_CLIENT_ID
 	- IDENTITY_POOL_ID
 
-### Regist Subscriber
-To receive alert, create subscription to SNS topic. This app will create SNS topic named serverless-web-monitor.
+## Create User
+First, we will use AWS CLI to sign up.
+
+```
+$ aws cognito-idp sign-up \
+  --region YOUR_COGNITO_REGION \
+  --client-id YOUR_COGNITO_APP_CLIENT_ID \
+  --username admin@example.com \
+  --password Passw0rd!
+
+```
+
+Next, the user can  authenticate with the User Pool.
+
+```
+$ aws cognito-idp admin-confirm-sign-up \
+  --region YOUR_COGNITO_REGION \
+  --user-pool-id YOUR_COGNITO_USER_POOL_ID \
+  --username admin@example.com
+```
+
+
+### Register Subscriber that recieve SNS Notification
+To receive alert, create [subscription](https://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html) to SNS topic. 
+
+
+next,[Front-en part](../react-dir/README.md)
+
+
+
