@@ -26,13 +26,18 @@ provider:
       Action:
         - "sns:Publish"
       Resource: "${self:resources.Outputs.SitesSNSTopicArn.Value}"
+    - Effect: "Allow"
+      Action: 
+        - "mobileanalytics:PutEvents"
+      Resource: "*"
+
   environment:
     SERVERLESS_PROJECT: ${self:service}
     SERVERLESS_STAGE: ${self:custom.stage}
     SITE_TABLE_NAME: ${self:service}-sites-${self:custom.stage}
     SNS_TOPIC_ARN: ${self:resources.Outputs.SitesSNSTopicArn.Value}
     S3_REACT_DATA: ${self:service}-bucket-${self:custom.stage}
-    SITE_URL: ${self:provider.environment.SITE_TABLE_NAME}.s3-website-${self:provider.region}.amazonaws.com
+    SITE_URL: ${self:provider.environment.S3_REACT_DATA}.s3-website-${self:provider.region}.amazonaws.com
 
 functions:
   register:
@@ -41,7 +46,7 @@ functions:
     description: "${self:service}: Register target website to DynamoDB"
     events:
       - http:
-          path: sites/register
+          path: register
           method: post
           cors: true
           private: ${self:custom.private}
@@ -51,7 +56,7 @@ functions:
     description: "${self:service}: Remove target website from DynamoDB"
     events:
       - http:
-          path: sites/remove
+          path: remove
           method: post
           cors: true
           private: ${self:custom.private}

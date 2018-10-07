@@ -1,5 +1,4 @@
 # react-dir 
-## desctiption
 
 ## setup
 
@@ -68,7 +67,19 @@ export default {
 };
 ```
 
+## Deploy
 
+```
+$ aws s3 sync build/ s3://YOUR_S3_DEPLOY_BUCKET_NAME 
+
+```
+
+if you deploy again when change config 
+
+```
+$ aws s3 sync build/ s3://YOUR_S3_DEPLOY_BUCKET_NAME --delete
+
+```
 
 
 ## Further Improvements

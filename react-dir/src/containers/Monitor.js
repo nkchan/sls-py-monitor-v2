@@ -3,10 +3,13 @@ import "./Monitor.css";
 import superagent from 'superagent';
 import superagentJsonapify from 'superagent-jsonapify';
 import { Modal,Button } from 'react-bootstrap';
+import config from "../config"
 
-const REQUEST_URL = 'https://7pb9bg57ec.execute-api.ap-northeast-1.amazonaws.com/dev/get_site'
-const REGISTER_URL = 'https://7pb9bg57ec.execute-api.ap-northeast-1.amazonaws.com/dev/sites/register'
-const DELETE_URL =   'https://7pb9bg57ec.execute-api.ap-northeast-1.amazonaws.com/dev/sites/remove'
+const API_URL = config.apiGateway.URL + '/'+ config.apiGateway.STAGE;
+
+const REQUEST_URL =  API_URL+'/get_site'
+const REGISTER_URL = API_URL+'/register'
+const DELETE_URL =   API_URL+'/remove'
 export default class  Monitor extends Component {
 
     constructor(props) {
@@ -110,6 +113,7 @@ export default class  Monitor extends Component {
                 </thead>
                 <tbody>
             {this.state.data.map((item) => {
+PTION
                     return (
                             <tr key={item.id} data-toggle="modal" data-target="#removesite" data-id={item.id}
                         data-name={item.name} data-url={item.url}  onClick={this.DeleteSiteSet}>

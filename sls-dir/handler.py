@@ -11,7 +11,7 @@ import os
 
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table(os.environ["SITE_TABLE_NAME"])
-
+cors_url = "http://"+os.environ['SITE_URL'];
 
 def register(event, context):
     """
@@ -34,11 +34,15 @@ def register(event, context):
         "statusCode": 302,
         "headers": {
             'Location': './',
-            "Access-Control-Allow-Origin": "http://"+os.environ['SITE_URL']+'/',
-            "Access-Control-Allow-Credentials": True
-         }
+            "Access-Control-Allow-Origin": cors_url,
+            "Access-Control-Allow-Credentials": True,
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
+         },
+        "body":""
     }
-
+    print(response)
     return response
 
 
@@ -55,9 +59,11 @@ def remove(event, context):
         "statusCode": 302,
         "headers": {
             'Location': './',
-            "Access-Control-Allow-Origin": "http://"+os.environ['SITE_URL']+'/',
-            "Access-Control-Allow-Credentials": True
-        }
+            "Access-Control-Allow-Origin": cors_url,
+            "Access-Control-Allow-Credentials": True,
+            'Content-Type': 'application/json'
+        },
+        "body":""
     }
 
     return response
@@ -65,10 +71,13 @@ def remove(event, context):
 def get_site(event, context):
     data = table.scan()
     json_str = json.dumps(data["Items"],default=decimal_default_proc)
+    print(cors_url)
     response = {
        "statusCode":200,
         "headers": {
-            "Access-Control-Allow-Origin": "*"
+            "Access-Control-Allow-Origin": cors_url,
+			"Access-Control-Allow-Credentials": True,
+			'Content-Type': 'application/json'
         },
        "body" : json_str 
     }	
