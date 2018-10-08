@@ -20,7 +20,7 @@ $ npm build
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::sls-py-webmonitor-bucket-dev/*"
+            "Resource": "arn:aws:s3:::'yourbucketname'/*"
         }
     ]
 }
@@ -56,7 +56,8 @@ export default {
   },
   apiGateway: {
     REGION: "ap-northeast-1",
-    URL: "https://xxxxxx.execute-api.ap-northeast-1.amazonaws.com/prod"
+    URL: "https://xxxxxx.execute-api.ap-northeast-1.amazonaws.com",
+    STAGE: "xxx"
   },
   cognito: {
     REGION: "ap-northeast-1",
