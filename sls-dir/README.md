@@ -56,7 +56,7 @@ this item is used [here](../react-dir/src/config.js.default)
 	- project name-bucket-stage
 
 - api gateway
-	- `https://xxxxxx.execute-api.ap-northeast-1.amazonaws.com/prod`	
+	- `https://xxxxxx.execute-api.ap-northeast-1.amazonaws.com`	
 
 - Cognito 
 	- USER_Pool_ID
