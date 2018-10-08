@@ -79,9 +79,9 @@ export default class  Monitor extends Component {
     SendSiteData(){
         superagentJsonapify(superagent);
         superagent.post(REGISTER_URL).send({name:this.state.site,url:this.state.url}).catch(err=>{console.log(err.message)})
+        this.props.history.push('/')
         this.setState({site:'',url:''})
         this.setState({show:false});
-        this.props.history.push('/')
     }
     DeleteSiteSet(event) {
         this.setState({remove: true});
@@ -113,7 +113,7 @@ export default class  Monitor extends Component {
                 </thead>
                 <tbody>
             {this.state.data.map((item) => {
-PTION
+
                     return (
                             <tr key={item.id} data-toggle="modal" data-target="#removesite" data-id={item.id}
                         data-name={item.name} data-url={item.url}  onClick={this.DeleteSiteSet}>

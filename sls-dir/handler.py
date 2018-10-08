@@ -37,7 +37,7 @@ def register(event, context):
             "Access-Control-Allow-Origin": cors_url,
             "Access-Control-Allow-Credentials": True,
             'Content-Type': 'application/json',
-            "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+            "Access-Control-Allow-Headers": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,x-requested-with",
             "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
          },
         "body":""

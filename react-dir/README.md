@@ -82,6 +82,9 @@ $ aws s3 sync build/ s3://YOUR_S3_DEPLOY_BUCKET_NAME --delete
 ```
 
 
+## Complete 
+Please, display your S3 Bucket URL.
+
 ## Further Improvements
 - Re-rendering if you operate add/delete site
 - Improve speed

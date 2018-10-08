@@ -29,4 +29,5 @@ This part is used [Severless Framework](https://serverless.com/) to realize Back
 ## Front-end part
 This par is used [React](https://reactjs.org/) in front-end. For details, click [here](/react-dir/README.md)
 
-## Create login User
+## Change Config if you use a custom domain
+First, you watch [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html), Second, change [sls-dir/hander.py L14](https://github.com/nkchan/sls-py-monitor-v2/blob/master/sls-dir/handler.py#L14) variable 'cors_url'
